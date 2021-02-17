@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+pairings for {{ character }}
+{% endblock %}
+
+{% block content %}
+<p>most frequently paired with {{ rows[0]['name'] }}</p>
+<p>other popular pairings:</p>
+<ul>
+{% for row in rows[1:4] %}
+<!-- <li>{{ row['name'] }}: {{ row['count'] }}</li> -->
+<li>{{ row['name'] }}</li>
+{% endfor %}
+</ul>
+(showing top three)
+{% endblock %}
